@@ -1,0 +1,25 @@
+{
+  "name": "e2e_doc_playwright",
+  "version": "1.0.0",
+  "description": "e2e testing DOC",
+  "main": "index.js",
+  "scripts": {
+    "playAllTests": "playwright test tests/ --workers=3 --headed && npm run allure-report",
+    "playAllTestsHeadless": "playwright tests/ --workers=3 --headless && npm run allure-report",
+    "report": "playwright show-report e2e-reports",
+    "allure-report": "allure serve allure-results"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/lodash": "^4.14.199",
+    "@types/node": "^18.14.2",
+    "allure-commandline": "^2.30.0",
+    "allure-playwright": "^3.0.6",
+    "dotenv": "^16.3.1",
+    "lodash": "^4.17.21",
+    "playwright": "^1.18.1"
+  }
+}
