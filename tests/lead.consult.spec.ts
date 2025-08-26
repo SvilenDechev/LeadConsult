@@ -1,6 +1,7 @@
 import { test, Page, BrowserContext, Locator, expect } from "@playwright/test";
 import { elementsSnapshotComparison } from "../lib/visualComparison";
-import { expectVisible } from "../lib/globals";
+import { expectVisible, fill } from "../lib/globals";
+import { userDetails } from "../testData";
 
 let page: Page;
 let context: BrowserContext;
@@ -52,20 +53,12 @@ test.describe.parallel("Lead consult public page validations:", () => {
   });
 
   test("The user should NOT be able to send message if not pass reCAPTCHA method", async () => {
-    const userName = "Ivan Ivanov";
-    const userEmail = "mail@test.com";
-    const userPhone = "1111111111";
-    const userMessage = "e2e test leadConsult";
-
     await page.goto("https://www.leadconsult.eu/contact-us/");
-    await page.getByLabel("Your Name*").click();
-    await page.getByLabel("Your Name*").fill(userName);
-    await page.getByLabel("Your Email*").click();
-    await page.getByLabel("Your Email*").fill(userEmail);
-    await page.getByLabel("Your phone number").click();
-    await page.getByLabel("Your phone number").fill(userPhone);
-    await page.getByLabel("Your Message*").click();
-    await page.getByLabel("Your Message*").fill(userMessage);
+
+    await fill(page.getByLabel("Your Name*"), userDetails.name);
+    await fill(page.getByLabel("Your Email*"), userDetails.email);
+    await fill(page.getByLabel("Your phone number"), userDetails.phone);
+    await fill(page.getByLabel("Your Message*"), userDetails.message);
     await page
       .getByLabel("Kontaktformular")
       .getByLabel("I agree and allow LEAD")

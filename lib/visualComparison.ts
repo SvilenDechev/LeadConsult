@@ -1,6 +1,5 @@
 import { Locator } from 'playwright-core';
 import { expect, Page } from '@playwright/test';
-import { expectVisible } from './globals';
 
  interface ElementsSnapshotComparisonOptions {
   page: Page; 
@@ -8,7 +7,7 @@ import { expectVisible } from './globals';
   elements: Locator[]; 
   threshold?: number; 
   timeout?: number; 
-}
+};
 
 const DEFAULT_TIMEOUT = 1000;
 
