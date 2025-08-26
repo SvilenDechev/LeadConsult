@@ -39,16 +39,15 @@ Information for downloading and installation of NodeJS: - download: https://node
 # Test execution
 
   1. Go to the project via terminal:
-    - cd way/to/e2e-tests
+    - cd way/to/leadConsult
 
   2. Execute the following command:
     - select one of the commands listed under scripts in the package.json file
-    - for example - ```npm run play tests/ ```
     - to run all tests use ```npm playAllTets```
 
 
 # Cover test cases
-- The cover tests are provide by the task
+- The cover tests are provide by the mail
 
 # Uncover test cases
 - 
