@@ -6,4 +6,4 @@ e2e-reports
 /playwright-report/
 /playwright/.cache/
 allure-results/
-package-lock.json/
+package-lock.json
