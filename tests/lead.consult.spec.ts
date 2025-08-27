@@ -29,7 +29,7 @@ test.describe.parallel("Lead consult public page validations:", () => {
     await page.goto("https://www.leadconsult.eu/");
   });
 
-  test("validate header navigation buttons is visible", async ({}, testInfo) => {
+  test("validate header navigation buttons is visible - 1", async ({}, testInfo) => {
     const header: Locator = page.locator("#header-container");
     await expectVisible(header);
     for (const button of buttons) {
@@ -42,7 +42,7 @@ test.describe.parallel("Lead consult public page validations:", () => {
     });
   });
 
-  test("validate that header navigation buttons navigate to the correct pages", async ({}, testInfo) => {
+  test("validate that header navigation buttons navigate to the correct pages - 1", async ({}, testInfo) => {
    await page.locator('#menu-item-5815').getByText('About us').hover();
    await helpers.clickLinkByName('Our Company');
    await expect(page).toHaveURL(/.*about-us/); //regex that searches for "about-us" in url
@@ -52,18 +52,18 @@ test.describe.parallel("Lead consult public page validations:", () => {
    await helpers.checkNavigationButtons('Products', 'products', 'Our Products');
   });
 
-  test("About Us section should contain 'team' word", async () => {
+  test("About Us section should contain 'team' word - 2", async () => {
     await click(page.getByText("About us"));
     await helpers.clickLinkByName("Our Company");
     await expect(page.locator("body")).toContainText(/team/i); // /team/i = regex that searches for "team", where the "i" flag makes it case-insensitive (Team, TEAM, team)
   });
 
-  test("Contact section should contain send button", async () => {
+  test("Contact section should contain send button - 3", async () => {
     await helpers.clickLinkByName("Contact us");
     await expectVisible(page.getByRole("button", { name: "Send" }));
   });
 
-  test("The user should NOT be able to send message if not pass reCAPTCHA method", async () => {
+  test("The user should NOT be able to send message if not pass reCAPTCHA method - 4 $ 5 & 6", async () => {
     await helpers.clickLinkByName("Contact us");
     await fill(page.getByLabel("Your Name*"), userDetails.name);
     await fill(page.getByLabel("Your Email*"), userDetails.email);
