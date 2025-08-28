@@ -13,7 +13,7 @@
 - [Cover test cases](#Cover-test-cases)
 - [Uncover test cases](#Uncover-test-cases)
 - [Reporting](#Reporting)
-- [2FA_Provider](#2FA_Provider)
+
 
 # Project Overview
 
