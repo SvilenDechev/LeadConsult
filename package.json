@@ -4,7 +4,7 @@
   "description": "e2e testing DOC",
   "main": "index.js",
   "scripts": {
-    "playAllTests": "playwright test tests/ --workers=3 --headed && npm run allure-report",
+  "playAllTests": "playwright test tests/ --workers=3 --headed || true && npm run allure-report",
     "playAllTestsHeadless": "playwright tests/ --workers=3 --headless && npm run allure-report",
     "report": "playwright show-report e2e-reports",
     "allure-report": "allure serve allure-results"
