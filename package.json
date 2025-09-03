@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
   "playAllTests": "playwright test tests/ --workers=3 --headed || true && npm run allure-report",
-    "playAllTestsHeadless": "playwright tests/ --workers=3 --headless && npm run allure-report",
+    "playAllTestsHeadless": "playwright test tests/ --workers=3 || true && npm run allure-report",
     "report": "playwright show-report e2e-reports",
     "allure-report": "allure serve allure-results"
   },
